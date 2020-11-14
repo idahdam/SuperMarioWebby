@@ -9,12 +9,30 @@ const pages = [
 ]
 
 app.get("/", (req, res, next)=>{
+    console.log('welcome to main')
     res.sendFile(path.join(__dirname + '/main.html'));
 })
 
-// app.get("/:movement", (req, res, next)=>{
-    
-// })
+app.get("/right", (req, res, next)=>{
+    console.log('you moved right')
+    res.sendFile(path.join(__dirname + '/routers/right.html'));
+})
+app.get("/left", (req, res, next)=>{
+    console.log('you moved left')
+    res.sendFile(path.join(__dirname + '/routers/left.html'));
+})
+app.get("/jump", (req, res, next)=>{
+    console.log('you jumped')
+    res.sendFile(path.join(__dirname + '/routers/jump.html'));
+})
+app.get("/run", (req, res, next)=>{
+    console.log('you run')
+    res.sendFile(path.join(__dirname + '/routers/run.html'));
+})
+app.get("/stationary", (req, res, next)=>{
+    console.log('youre not moving')
+    res.sendFile(path.join(__dirname + '/routers/stationary.html'));
+})
 
 
 
