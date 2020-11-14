@@ -1,5 +1,4 @@
-import pygame
-import socket
+import pygame, socket, time
 from controller import Controller
 
 width = 600
@@ -55,11 +54,8 @@ class Main:
                 screen.blit(start, startRect)
 
                 if click[0] == 1:
-                    print(ip_address)
                     controller = Controller()
-                    controller.start()
-
-                    
+                    controller.start()                    
 
             elif(262 + 85 > mouse[0] > 262 and 33 + 188 > mouse[1] > 33):
                 stop = font.render(' stop  ', True, white, black)
@@ -68,8 +64,11 @@ class Main:
                 screen.blit(stop, stopRect)
 
                 if click[0] == 1:
-                    controller = Controller()
-                    controller.start()
+                    seeYou = smallFont.render('see you!', True, white, black)
+                    seeYouRect = seeYou.get_rect()
+                    seeYouRect.center = (width//2, height//2+50)
+                    screen.blit(seeYou, seeYouRect)
+                    running = False
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

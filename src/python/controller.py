@@ -9,5 +9,3 @@ class Controller:
             # print(cwd)
             os.system('start /wait cmd /k "cd {} && cd ../gui && npm start'.format(filename))
 
-    def stop(self):
-        pass
