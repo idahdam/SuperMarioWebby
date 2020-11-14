@@ -1,5 +1,6 @@
 import pygame
 import socket
+from controller import Controller
 
 width = 600
 height = 400
@@ -23,6 +24,7 @@ class Main:
         while running:
 
             font = pygame.font.Font(None, 45)
+            smallFont = pygame.font.Font(None, 25)
 
             title = font.render(' controller ', True, black, white)
             titletextRect = title.get_rect()
@@ -42,6 +44,8 @@ class Main:
 
             mouse = pygame.mouse.get_pos()
             click = pygame.mouse.get_pressed()
+            hostname = socket.gethostname()
+            ip_address = socket.gethostbyname(hostname)
             # print(mouse)
             
             if(257 + 85 > mouse[0] > 256 and 33 + 144 > mouse[1] > 33):
@@ -51,13 +55,21 @@ class Main:
                 screen.blit(start, startRect)
 
                 if click[0] == 1:
-                    print('UR MOM')
+                    print(ip_address)
+                    controller = Controller()
+                    controller.start()
+
+                    
 
             elif(262 + 85 > mouse[0] > 262 and 33 + 188 > mouse[1] > 33):
                 stop = font.render(' stop  ', True, white, black)
                 stopRect = start.get_rect()
                 stopRect.center = (width//2, height//2)
                 screen.blit(stop, stopRect)
+
+                if click[0] == 1:
+                    controller = Controller()
+                    controller.start()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
