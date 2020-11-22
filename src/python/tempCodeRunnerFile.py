@@ -1,0 +1,1 @@
+gerak = sys.argv[1]
