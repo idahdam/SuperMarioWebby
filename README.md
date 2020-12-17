@@ -13,3 +13,9 @@ Just why would anyone do this to himself?
 
 
 That's it
+
+## QnA
+
+1. Why didn't you use /:pageToDo instead of making >2 HTML pages?
+
+- Pls don't ask me this and just fork the program do it. i kinda forgot how to do that so deal with it
