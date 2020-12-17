@@ -1,4 +1,4 @@
-import pygame, socket, time
+import pygame, socket, time, os, subprocess, pyqrcode
 from controller import Controller
 
 width = 600
@@ -45,6 +45,7 @@ class Main:
             click = pygame.mouse.get_pressed()
             hostname = socket.gethostname()
             ip_address = socket.gethostbyname(hostname)
+            dest = ip_address + ":1700"
             # print(mouse)
             
             if(257 + 85 > mouse[0] > 256 and 33 + 144 > mouse[1] > 33):
@@ -54,8 +55,11 @@ class Main:
                 screen.blit(start, startRect)
 
                 if click[0] == 1:
-                    controller = Controller()
-                    controller.start()                    
+                    dirname = os.path.dirname(__file__)
+                    filename = os.path.join(dirname)     
+                    myQR = pyqrcode.create(dest).show()
+                    cmd = f"cd {filename} && py controller.py"
+                    subprocess.call(cmd, shell=True)
 
             elif(262 + 85 > mouse[0] > 262 and 33 + 188 > mouse[1] > 33):
                 stop = font.render(' stop  ', True, white, black)
@@ -76,7 +80,6 @@ class Main:
                     quit()
                     
                 pygame.display.update()
-
 
 
 if __name__ == "__main__":

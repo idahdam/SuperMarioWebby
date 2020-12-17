@@ -9,3 +9,7 @@ class Controller:
             # print(cwd)
             os.system('start /wait cmd /k "cd {} && cd ../gui && npm start'.format(filename))
 
+if __name__ == "__main__":
+    main = Controller()
+    main.start()
+
