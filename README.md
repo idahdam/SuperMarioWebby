@@ -10,6 +10,7 @@ Just why would anyone do this to himself?
 -Optional
 5. IFTTT with PushBullet connectivity
 6. Push2Run and configs
+7. Phone app that can read QRCode (GoogleLens)
 
 
 That's it
