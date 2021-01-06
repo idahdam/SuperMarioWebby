@@ -8,9 +8,7 @@ Just why would anyone do this to himself?
 3. Python library: Pygame, Pyqrcode
 4. NodeJS library: Express, Python-Shell
 -Optional
-5. IFTTT with PushBullet connectivity
-6. Push2Run and configs
-7. Phone app that can read QRCode (GoogleLens)
+5. Phone app that can read QRCode (GoogleLens)
 
 
 That's it
